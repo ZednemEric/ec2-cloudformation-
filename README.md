@@ -54,9 +54,6 @@ InstanceID	The ID of the created EC2 instance
 🧹 Cleanup
 To delete the stack and avoid incurring charges:
 
-bash
-Copy
-Edit
 aws cloudformation delete-stack --stack-name ec2-ssh-instance
 📎 License
 This template is provided as-is for educational or prototype use. Use at your own risk.
