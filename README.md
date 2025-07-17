@@ -36,7 +36,10 @@ You can deploy this stack using the AWS Management Console, AWS CLI, or any Infr
 - AWS CLI configured with your credentials
 - An existing key pair (e.g., `my-key-pair`)
 
-### CLI Deployment
+
+### 🚀 CLI Deployment
+
+Use the AWS CLI to create the CloudFormation stack:
 
 ```bash
 aws cloudformation create-stack \
@@ -44,16 +47,41 @@ aws cloudformation create-stack \
   --template-body file://ec2-template.yaml \
   --parameters ParameterKey=KeyName,ParameterValue=my-key-pair \
   --capabilities CAPABILITY_NAMED_IAM
-🔐 Security Consideration
-This template opens port 22 to the world (0.0.0.0/0). For production environments, consider limiting the CIDR range to a specific IP or IP range for better security.
+```
 
-📤 Outputs
-Output	Description
-InstanceID	The ID of the created EC2 instance
+---
 
-🧹 Cleanup
+### 🔐 Security Consideration
+
+⚠️ This template opens **port 22** to the world (`0.0.0.0/0`).
+For production environments, consider **limiting the CIDR range** to a trusted IP range for better security.
+
+---
+
+### 📤 Outputs
+
+| Output Name  | Description                        |
+| ------------ | ---------------------------------- |
+| `InstanceID` | The ID of the created EC2 instance |
+
+---
+
+### 🧹 Cleanup
+
 To delete the stack and avoid incurring charges:
 
+```bash
 aws cloudformation delete-stack --stack-name ec2-ssh-instance
-📎 License
-This template is provided as-is for educational or prototype use. Use at your own risk.
+```
+
+---
+
+### 📄 License
+
+This template is provided **as-is** for educational or prototype use.
+Use at your own risk.
+
+---
+
+You can now copy and paste this into your GitHub `README.md`, and it will render cleanly and professionally. Let me know if you'd like to add architecture diagrams or GitHub badges too.
+
